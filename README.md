@@ -6,3 +6,5 @@ Run this app:
  2. You should have `python3` already added and configured on your machine
  3. Install all dependencies `pip install -r requirements.txt`
  4. Run app `python3 app.py`
+ 
+ > PS: Its got a cool UI
