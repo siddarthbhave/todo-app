@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{%block head%}
+<div>
+    <title>Task Master</title>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5" style="font-family: 'Times New Roman', Times, serif;"><b><a href="{{url_for('index')}}">Task Master</a></b></h1>
+            <hr class="my-1" style="background-color: rgb(245, 8, 8);">
+            <p class="lead">Here's a list of all the pending tasks:</p>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+
+{%block body%}
+
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Added/Updated DateTime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {%for task in tasks%}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created }}</td>
+                <td>
+                    <a href="{{ url_for('delete', id=task.id) }}">Delete</a>
+                    <br>
+                    <a href="{{ url_for('update', id=task.id) }}">Edit</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+    <form action="" method="POST">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter a Task" name="content"></textarea>
+        <br>
+        <input type="submit" class="btn btn-warning" value="Add Task">
+    </form>
+</div>
+{%endblock%}

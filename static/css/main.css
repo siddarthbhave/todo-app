@@ -1,0 +1,19 @@
+html, body{
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-bottom: 0.5rem;
+    color: yellow;
+    background-color: black;
+}
+
+.jumbotron{
+    padding: 1rem 1rem;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+a{
+    color: greenyellow; 
+}
