@@ -1,5 +1,5 @@
 # Task Manager App
-## Create, Edit and Remove tasks after completion
+## Create, Edit and Remove tasks based on its status
 
 Run this app:
  1. Clone repo `git clone https://github.com/siddarthbhave/todo-app.git`
